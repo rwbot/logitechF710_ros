@@ -4,15 +4,19 @@
 # 2) MODE Light must be OFF
 # If the Mode light is on, or if in X-Mode then the mapping is different
 
-axis_linear: 1              # Forward/Backward - Left Stick
-scale_linear: 1.0
+axis_linear:              # X/Y Translation - Left Stick
+    x: 1
+    y: 0
+scale_linear:
+    x: 1
+    y: 1
 scale_linear_turbo: 1.5
 
-axis_angular: 2             # Left/Right - Right Stick
+axis_angular: 2             # Yaw Rotation - Right Stick
 scale_angular: 1.0
 
-enable_button: 7            # Right Trigger
-enable_turbo_button: 11     # Start Button
+enable_button: 7            # Right Trigger = Deadman's Switch
+# enable_turbo_button: 11     # Start Button
 
 
 # AXES[]

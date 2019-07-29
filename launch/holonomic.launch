@@ -17,7 +17,7 @@ If the Mode light is on, or if in X mode the mapping is different
     </node>
 
 
-    <arg name="joy_config" default="LogitechF710"/>
+    <arg name="joy_config" default="holonomic"/>
     <arg name="config_filepath" default="$(find logitech_f710)/config/$(arg joy_config).config.yaml"/>
 
     <node pkg="teleop_twist_joy" name="teleop_twist_joy" type="teleop_node">
