@@ -13,15 +13,57 @@ If the Mode light is on, or if in X mode the mapping is different
     <node pkg="joy" type="joy_node" name="joy_node">
         <param name="dev" value="$(arg joy_dev)"/>
         <param name="deadzone" value="0.1"/>
-        <param name="autorepeat_rate" value="20"/>
+        <param name="autorepeat_rate" value="5"/>
     </node>
 
-
-    <arg name="joy_config" default="LogitechF710"/>
-    <arg name="config_filepath" default="$(find logitech_f710)/config/$(arg joy_config).config.yaml"/>
+    <include file="$(find logitech_f710)/launch/twist_mux.launch"/>
 
     <node pkg="teleop_twist_joy" name="teleop_twist_joy" type="teleop_node">
-        <rosparam command="load" file="$(arg config_filepath)"/>
+        <remap from="cmd_vel" to="joy_vel"/>  <!-- Comment if not using twist_mux  -->
+        <rosparam>
+            enable_button: 7            # Right Trigger = Deadman's Switch
+
+            axis_linear:                # X/Y Translation - Left Stick
+                x: 1
+                y: 0
+            scale_linear:
+                x: 1.0
+                y: 1.0                  # Set to zero to disable Y velocity (non-holonomic)
+
+            axis_angular:               # Yaw Rotation - Right Stick
+                yaw: 2
+            scale_angular:
+                yaw: 1.0
+
+            enable_turbo_button: 11     # Start Button
+            scale_linear_turbo: 1.5
+            scale_angular_turbo: 1.5
+        </rosparam>
     </node>
 
 </launch>
+
+
+<!--
+AXES[]
+  0:ABS_X
+  1:ABS_Y
+  2:ABS_Z
+  3:ABS_RZ
+  4:ABS_HAT0X
+  5:ABS_HAT0Y
+
+BUTTONS[]
+  0:BTN_X
+  1:BTN_A
+  2:BTN_B
+  3:BTN_Y
+  4:BTN_LB
+  5:BTN_RB
+  6:BTN_LTR
+  7:BTN_RTR
+  8:BTN_BACK
+  9:BTN_START
+  10:BTN_L_STK
+  11:BTN_R_STK
+ -->
