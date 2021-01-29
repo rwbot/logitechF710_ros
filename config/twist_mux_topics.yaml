@@ -7,10 +7,15 @@
 
 topics:
 -
-  name    : navigation
-  topic   : nav_vel
+  name    : pathfollower
+  topic   : pf/cmd_vel
   timeout : 0.5
   priority: 10
+-
+  name    : hc
+  topic   : hocon_cmd_vel
+  timeout : 0.5
+  priority: 20
 -
   name    : joystick
   topic   : joy_vel
