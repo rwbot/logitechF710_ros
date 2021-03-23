@@ -20,4 +20,9 @@ topics:
   name    : joystick
   topic   : joy_vel
   timeout : 0.5
-  priority: 100
+  priority: 90
+-
+  name    : soft_estop
+  topic   : soft_estop
+  timeout : 0.1
+  priority: 90

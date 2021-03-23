@@ -13,15 +13,20 @@ locks:
   name    : joystick
   topic   : joy_priority
   timeout : 0.0
-  priority: 100
+  priority: 90
 -
   name    : hc
   topic   : hocon_priority
   timeout : 0.0
-  priority: 100
+  priority: 20
 -
   name    : pause
   topic   : pause_navigation
   timeout : 0.0
   # Same priority as joystick control, so it'll not block it.
-  priority: 100
+  priority: 90
+-
+  name    : soft_estop
+  topic   : soft_estop_priority
+  timeout : 0.0
+  priority: 90

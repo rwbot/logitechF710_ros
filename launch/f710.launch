@@ -10,7 +10,7 @@ If the Mode light is on, or if in X mode the mapping is different
     <!-- If using udev rules to map varying jsX -->
     <!-- <arg name="joy_dev" default="/dev/js_f710"/> -->
 
-    <node pkg="joy" type="joy_node" name="joy_node">
+    <node pkg="joy" type="joy_node" name="joy_node" respawn="true">
         <param name="dev" value="$(arg joy_dev)"/>
         <param name="deadzone" value="0.1"/>
         <param name="autorepeat_rate" value="300"/>
@@ -18,7 +18,7 @@ If the Mode light is on, or if in X mode the mapping is different
 
     <include file="$(find logitech_f710)/launch/twist_mux.launch"/>
 
-    <node pkg="teleop_twist_joy" name="teleop_twist_joy" type="teleop_node">
+    <node pkg="teleop_twist_joy" name="teleop_twist_joy" type="teleop_node" respawn="true">
        <remap from="cmd_vel" to="joy_vel"/> 
         <!-- Comment if not using twist_mux  -->
         <rosparam>
