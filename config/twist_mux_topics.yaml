@@ -9,20 +9,20 @@ topics:
 -
   name    : pathfollower
   topic   : pf/cmd_vel
-  timeout : 0.5
+  timeout : 0.1
   priority: 10
 -
   name    : hc
   topic   : hocon_cmd_vel
-  timeout : 0.5
+  timeout : 0.1
   priority: 20
 -
   name    : joystick
   topic   : joy_vel
   timeout : 0.5
-  priority: 90
+  priority: 95
 -
   name    : soft_estop
   topic   : soft_estop
-  timeout : 0.1
-  priority: 90
+  timeout : 0.15
+  priority: 80

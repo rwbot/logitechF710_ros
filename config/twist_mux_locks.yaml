@@ -13,10 +13,15 @@ locks:
   name    : joystick
   topic   : joy_priority
   timeout : 0.0
-  priority: 90
+  priority: 95
 -
-  name    : hc
+  name    : hocon_priority
   topic   : hocon_priority
+  timeout : 0.0
+  priority: 30
+-
+  name    : pf_priority
+  topic   : pf_priority
   timeout : 0.0
   priority: 20
 -
@@ -29,4 +34,4 @@ locks:
   name    : soft_estop
   topic   : soft_estop_priority
   timeout : 0.0
-  priority: 90
+  priority: 80
