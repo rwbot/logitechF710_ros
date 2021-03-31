@@ -19,7 +19,7 @@ topics:
 -
   name    : joystick
   topic   : joy_vel
-  timeout : 0.5
+  timeout : 0.15
   priority: 95
 -
   name    : soft_estop
