@@ -16,6 +16,9 @@ If the Mode light is on, or if in X mode the mapping is different
         <param name="autorepeat_rate" value="300"/>
     </node>
 
+    <node pkg="fuse_benchmarking" type="joy_input.py" name="joy_input" respawn="true"/>
+
+
     <include file="$(find logitech_f710)/launch/twist_mux.launch"/>
 
     <node pkg="teleop_twist_joy" name="teleop_twist_joy" type="teleop_node" respawn="true">

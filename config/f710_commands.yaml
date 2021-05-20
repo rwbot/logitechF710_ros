@@ -1,0 +1,13 @@
+---
+X: ''
+A: ''
+B: 'rostopic pub -r 10 /pause_navigation std_msgs/Bool "data: true"'
+Y: ''
+LB: '' 
+RB: '' 
+LT: ''
+RT: ''
+Back: ''
+Start: ''
+L_Stick: ''
+R_Stick: ''
